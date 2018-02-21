@@ -5,8 +5,10 @@ extension Job {
         guard let name = json["name"] as? String,
             let url = json["url"] as? String,
             let colorName = json["color"] as? String,
-            let color = JobColor(rawValue: colorName) else {
+            let color = JobColor(rawValue: colorName)
+        else {
                 return nil
+            
         }
 
         let lastBuild = json["lastBuild"] as? [String: Any]

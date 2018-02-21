@@ -34,6 +34,43 @@ class MonitorServiceDataSource: NSObject, UICollectionViewDataSource {
 
         return jobCellCreator.configureCell(indexPath: indexPath, from: lastResult?.jobs?[indexPath.row])
     }
+    
+    
+    // The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+        
+        switch kind {
+            
+        case UICollectionElementKindSectionHeader:
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonitorViewTitle", for: indexPath)
+            
+            
+            
+            guard let dashboardTitleView = headerView as? DashboardTitleView else {
+                return headerView
+            }
+        
+            dashboardTitleView.titleLabel.text = self.lastResult?.name
+            
+            dashboardTitleView.backgroundColor = UIColor(red:0.85, green:0.93, blue:0.97, alpha:1.0);
+            dashboardTitleView.titleLabel.textColor = UIColor(red:0.19, green:0.44, blue:0.56, alpha:1.0);
+            dashboardTitleView.layer.borderWidth = 3.0
+            dashboardTitleView.layer.borderColor = UIColor(red:0.74, green:0.87, blue:0.95, alpha:1.0).cgColor
+
+            
+            return dashboardTitleView
+
+            
+        default:
+            
+            assert(false, "Unexpected element kind")
+        }
+        
+    }
+    
+
 
     func refreshData(url: String) {
         MonitorService().getMonitor(with: url) { [weak self] (monitorResult, error) in
@@ -47,4 +84,5 @@ class MonitorServiceDataSource: NSObject, UICollectionViewDataSource {
         }
     }
 
+    
 }

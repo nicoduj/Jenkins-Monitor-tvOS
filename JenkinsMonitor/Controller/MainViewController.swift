@@ -3,7 +3,7 @@ import UIKit
 class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     var timer: Timer!
-    let transitionTime = 8.0
+    let transitionTime = 25.0
     var isScrolling = false
 
     private var pages: [UIViewController] = []
@@ -46,6 +46,10 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     override func viewDidAppear(_ animated: Bool) {
         if pages.count == 0 {
             presentConfigurationViewController()
+        }
+        else if (pages.count > 1)
+        {
+            playPressed()
         }
     }
 
@@ -91,7 +95,8 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     func scrollDashboards() {
         let currentIndex = self.presentationIndex(for: self)
-        let nextIndex = currentIndex >= pages.count - 2 ? 0 : currentIndex + 1
-        self.setViewControllers([pages[nextIndex]], direction:.reverse, animated:true, completion: nil)
+        let nextIndex = currentIndex > pages.count - 2 ? 0 : currentIndex + 1
+        
+        self.setViewControllers([pages[nextIndex]], direction: nextIndex==0 ? .reverse : .forward, animated:true, completion: nil)
     }
 }

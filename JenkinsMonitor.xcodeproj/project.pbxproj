@@ -32,6 +32,10 @@
 		01BD90BE1E54AE8D000DABF9 /* MonitorDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD90BD1E54AE8D000DABF9 /* MonitorDashboard.swift */; };
 		01BD90C01E54CBE6000DABF9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD90BF1E54CBE6000DABF9 /* DateExtension.swift */; };
 		01BD90C21E54D316000DABF9 /* MonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD90C11E54D316000DABF9 /* MonitorService.swift */; };
+		6D650DA4203DA04D002D64B1 /* DashboardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D650DA3203DA04D002D64B1 /* DashboardTitleView.swift */; };
+		6D650DA8203DA2F6002D64B1 /* expression_robotneutre.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D650DA5203DA2F6002D64B1 /* expression_robotneutre.png */; };
+		6D650DA9203DA2F6002D64B1 /* expression_robotcontent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D650DA6203DA2F6002D64B1 /* expression_robotcontent.png */; };
+		6D650DAA203DA2F6002D64B1 /* expression_robotpas content.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D650DA7203DA2F6002D64B1 /* expression_robotpas content.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		01BD90BD1E54AE8D000DABF9 /* MonitorDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorDashboard.swift; sourceTree = "<group>"; };
 		01BD90BF1E54CBE6000DABF9 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		01BD90C11E54D316000DABF9 /* MonitorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorService.swift; sourceTree = "<group>"; };
+		6D650DA3203DA04D002D64B1 /* DashboardTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTitleView.swift; sourceTree = "<group>"; };
+		6D650DA5203DA2F6002D64B1 /* expression_robotneutre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expression_robotneutre.png; path = JenkinsMonitor/expression_robotneutre.png; sourceTree = SOURCE_ROOT; };
+		6D650DA6203DA2F6002D64B1 /* expression_robotcontent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expression_robotcontent.png; path = JenkinsMonitor/expression_robotcontent.png; sourceTree = SOURCE_ROOT; };
+		6D650DA7203DA2F6002D64B1 /* expression_robotpas content.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expression_robotpas content.png"; path = "JenkinsMonitor/expression_robotpas content.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,10 @@
 		01F2DC241E56244D0091255B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6D650DA6203DA2F6002D64B1 /* expression_robotcontent.png */,
+				6D650DA5203DA2F6002D64B1 /* expression_robotneutre.png */,
+				6D650DA7203DA2F6002D64B1 /* expression_robotpas content.png */,
+				6D650DA3203DA04D002D64B1 /* DashboardTitleView.swift */,
 				014EFB311E5229BA008222C9 /* Main.storyboard */,
 				014DE1E31E5249DD00734D50 /* JobStatusCollectionViewCell.swift */,
 				01B96D661E5752B500BC6FBB /* DashboardRowCell.swift */,
@@ -220,7 +232,6 @@
 				TargetAttributes = {
 					014EFB271E5229BA008222C9 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7BK8NL3DYL;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -248,7 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D650DA9203DA2F6002D64B1 /* expression_robotcontent.png in Resources */,
 				014EFB351E5229BA008222C9 /* Assets.xcassets in Resources */,
+				6D650DAA203DA2F6002D64B1 /* expression_robotpas content.png in Resources */,
+				6D650DA8203DA2F6002D64B1 /* expression_robotneutre.png in Resources */,
 				014EFB331E5229BA008222C9 /* Main.storyboard in Resources */,
 				0108FD941E5628660010FA4D /* JobColor.swift in Resources */,
 			);
@@ -280,6 +294,7 @@
 			files = (
 				0108FD951E56289C0010FA4D /* JobColor.swift in Sources */,
 				01B96D631E574B9F00BC6FBB /* DashboardListDataSource.swift in Sources */,
+				6D650DA4203DA04D002D64B1 /* DashboardTitleView.swift in Sources */,
 				01BD90C21E54D316000DABF9 /* MonitorService.swift in Sources */,
 				014EFB301E5229BA008222C9 /* ConfigViewController.swift in Sources */,
 				014DE1E01E5232F100734D50 /* MonitorResult.swift in Sources */,
@@ -413,7 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
@@ -431,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 7BK8NL3DYL;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
