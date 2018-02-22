@@ -5,7 +5,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
     var timer: Timer!
     let transitionTime = 25.0
     var isScrolling = false
-
+    
     private var pages: [UIViewController] = []
 
     override func viewDidLoad() {
@@ -14,6 +14,7 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.dataSource = self
         self.assignPlayButton()
         self.assignMenuButton()
+
     }
 
     func assignPlayButton() {
@@ -39,7 +40,6 @@ class MainViewController: UIPageViewController, UIPageViewControllerDataSource {
         guard let initialViewController = self.pages.first else {
             return
         }
-
         self.setViewControllers([initialViewController], direction: .forward, animated: false, completion: nil)
     }
 

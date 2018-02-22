@@ -1,6 +1,8 @@
-# Jenkins-Monitor-tvOS
-Apple TV Monitor for Jenkins Frok to add some fun graphics thanks to Julie Fiolet (http://cargocollective.com/juliefiolet)
+# Jenkins-Monitor-tvOS (and Travis :smirk:)
+Apple TV Monitor for Jenkins Fork to add some fun graphics thanks to Julie Fiolet (http://cargocollective.com/juliefiolet)
 
+This fork also supports Travis-Ci build status monitoring (not build progress). To add a travis monitoring, use the public URL of travis like this :
+https://api.travis-ci.org/repos/[username] where [username] is your 
 
 ## Screenshot
 

@@ -16,4 +16,5 @@ extension Build {
         let progress = duration != 0 ? Float(1) : estimatedProgress
         return Build(displayName: displayName, estimatedDuration: estimatedDuration, duration: duration, timestamp: timestamp, progress: progress)
     }
+    
 }

@@ -16,7 +16,7 @@ class MonitorViewController: UICollectionViewController, UICollectionViewDelegat
         self.dataSource = MonitorServiceDataSource()
         self.dataSource.jobCellCreator = self
         self.dataSource.delegate = self
-
+        
         self.collectionView?.dataSource = self.dataSource
         self.collectionView?.delegate = self
     }
@@ -51,9 +51,9 @@ class MonitorViewController: UICollectionViewController, UICollectionViewDelegat
         
         jobStatusCell.buildProgressView.isHidden = true
 
-        jobStatusCell.expreRobot.image = UIImage(named: job.jobColor.toRobotExpr());
+        jobStatusCell.expreRobot.image = UIImage(named: job.jobColor.toRobotExpr())
         
-        
+        jobStatusCell.linkedURL = job.url
         
         if let build = job.lastBuild {
             jobStatusCell.lastBuildTimeLabel.text = build.endTime.timeAgo(numericDates: true)
@@ -61,12 +61,13 @@ class MonitorViewController: UICollectionViewController, UICollectionViewDelegat
             jobStatusCell.buildProgressView.isHidden = !job.jobColor.isBuilding()
             jobStatusCell.buildProgressView.progress = build.progress
         }
-
+        
         return jobStatusCell
     }
 
+    
     override func viewWillDisappear(_ animated: Bool) {
-        self.timer.invalidate()
+        self.timer?.invalidate()
     }
 
     func loadTable() {
@@ -76,6 +77,8 @@ class MonitorViewController: UICollectionViewController, UICollectionViewDelegat
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+        
         let spacing: Float = 10
 
         let columnsCount = monitorDashboard?.columns ?? 1
